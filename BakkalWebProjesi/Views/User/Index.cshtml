@@ -1,0 +1,36 @@
+﻿@model BakkalWebProjesi.ViewModels.UserModels.UserListClass
+@{
+    ViewBag.Title = "Kullanıcılar";
+}
+
+<div class="users container ">
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/User/UserAdd" class="button">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Yeni Kullanıcı Ekle
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        @for (int i = 0; i < Model.users.Count; i++)
+        {
+            <div class="col-md-3">
+                <div class="item ">
+                    <a href="/User/UserDetail?id=@Model.users[i].kullanici_id">
+                        <!--  <img src="images/example_user.jpg" alt="">-->
+                        <div class="icon">@Model.users[i].k_adi[0]</div>
+                        <h1>@Model.users[i].k_adi</h1>
+                        <span>@Model.roles.Find(s => s.rol_id == @Model.users[i].rol_id).r_adi</span>
+                    </a>
+                    <a href="/User/UserUpdate?id=@Model.users[i].kullanici_id" class="edit-btn" title="kullanıcıyı düzenle">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </a>
+                    <a href="/User/UserDelete?id=@Model.users[i].kullanici_id" class="delete-btn" title="kullanıcıyı sil"><i class="fa fa-trash-alt"></i></a>
+                </div>
+            </div>
+        }
+      
+
+    </div>
+</div>

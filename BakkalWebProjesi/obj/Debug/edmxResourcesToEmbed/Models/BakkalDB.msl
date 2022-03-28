@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BakkalDbModelStoreContainer" CdmEntityContainer="BakkalDbEntities">
+    <EntitySetMapping Name="kategori">
+      <EntityTypeMapping TypeName="BakkalDbModel.kategori">
+        <MappingFragment StoreEntitySet="kategori">
+          <ScalarProperty Name="kategori_id" ColumnName="kategori_id" />
+          <ScalarProperty Name="k_adi" ColumnName="k_adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kategori_log_ins_del">
+      <EntityTypeMapping TypeName="BakkalDbModel.kategori_log_ins_del">
+        <MappingFragment StoreEntitySet="kategori_log_ins_del">
+          <ScalarProperty Name="kalid_id" ColumnName="kalid_id" />
+          <ScalarProperty Name="kategori_id" ColumnName="kategori_id" />
+          <ScalarProperty Name="k_adi" ColumnName="k_adi" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_turu" ColumnName="islem_turu" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kategori_log_up">
+      <EntityTypeMapping TypeName="BakkalDbModel.kategori_log_up">
+        <MappingFragment StoreEntitySet="kategori_log_up">
+          <ScalarProperty Name="kalu_ip" ColumnName="kalu_ip" />
+          <ScalarProperty Name="eski_k_adi" ColumnName="eski_k_adi" />
+          <ScalarProperty Name="yeni_k_adi" ColumnName="yeni_k_adi" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanici">
+      <EntityTypeMapping TypeName="BakkalDbModel.kullanici">
+        <MappingFragment StoreEntitySet="kullanici">
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="k_kullaniciadi" ColumnName="k_kullaniciadi" />
+          <ScalarProperty Name="k_parola" ColumnName="k_parola" />
+          <ScalarProperty Name="k_adi" ColumnName="k_adi" />
+          <ScalarProperty Name="k_soyadi" ColumnName="k_soyadi" />
+          <ScalarProperty Name="k_eposta" ColumnName="k_eposta" />
+          <ScalarProperty Name="k_telefon" ColumnName="k_telefon" />
+          <ScalarProperty Name="k_durum" ColumnName="k_durum" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanici_log_ins_del">
+      <EntityTypeMapping TypeName="BakkalDbModel.kullanici_log_ins_del">
+        <MappingFragment StoreEntitySet="kullanici_log_ins_del">
+          <ScalarProperty Name="klid_ip" ColumnName="klid_ip" />
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="k_kullaniciadi" ColumnName="k_kullaniciadi" />
+          <ScalarProperty Name="k_parola" ColumnName="k_parola" />
+          <ScalarProperty Name="k_adi" ColumnName="k_adi" />
+          <ScalarProperty Name="k_soyadi" ColumnName="k_soyadi" />
+          <ScalarProperty Name="k_eposta" ColumnName="k_eposta" />
+          <ScalarProperty Name="k_telefon" ColumnName="k_telefon" />
+          <ScalarProperty Name="k_durum" ColumnName="k_durum" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_turu" ColumnName="islem_turu" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanici_log_up">
+      <EntityTypeMapping TypeName="BakkalDbModel.kullanici_log_up">
+        <MappingFragment StoreEntitySet="kullanici_log_up">
+          <ScalarProperty Name="klu_id" ColumnName="klu_id" />
+          <ScalarProperty Name="eski_k_kullaniciadi" ColumnName="eski_k_kullaniciadi" />
+          <ScalarProperty Name="yeni_k_kullaniciadi" ColumnName="yeni_k_kullaniciadi" />
+          <ScalarProperty Name="eski_k_parola" ColumnName="eski_k_parola" />
+          <ScalarProperty Name="yeni_k_parola" ColumnName="yeni_k_parola" />
+          <ScalarProperty Name="eski_k_adi" ColumnName="eski_k_adi" />
+          <ScalarProperty Name="yeni_k_adi" ColumnName="yeni_k_adi" />
+          <ScalarProperty Name="eski_k_soyadi" ColumnName="eski_k_soyadi" />
+          <ScalarProperty Name="yeni_k_soyadi" ColumnName="yeni_k_soyadi" />
+          <ScalarProperty Name="eski_k_eposta" ColumnName="eski_k_eposta" />
+          <ScalarProperty Name="yeni_k_eposta" ColumnName="yeni_k_eposta" />
+          <ScalarProperty Name="eski_k_telefon" ColumnName="eski_k_telefon" />
+          <ScalarProperty Name="yeni_k_telefon" ColumnName="yeni_k_telefon" />
+          <ScalarProperty Name="eski_k_durum" ColumnName="eski_k_durum" />
+          <ScalarProperty Name="yeni_k_durum" ColumnName="yeni_k_durum" />
+          <ScalarProperty Name="eski_rol_id" ColumnName="eski_rol_id" />
+          <ScalarProperty Name="yeni_rol_id" ColumnName="yeni_rol_id" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="marka">
+      <EntityTypeMapping TypeName="BakkalDbModel.marka">
+        <MappingFragment StoreEntitySet="marka">
+          <ScalarProperty Name="marka_id" ColumnName="marka_id" />
+          <ScalarProperty Name="m_adi" ColumnName="m_adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="marka_log_ins_del">
+      <EntityTypeMapping TypeName="BakkalDbModel.marka_log_ins_del">
+        <MappingFragment StoreEntitySet="marka_log_ins_del">
+          <ScalarProperty Name="mlid_id" ColumnName="mlid_id" />
+          <ScalarProperty Name="marka_id" ColumnName="marka_id" />
+          <ScalarProperty Name="m_adi" ColumnName="m_adi" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_turu" ColumnName="islem_turu" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="marka_log_up">
+      <EntityTypeMapping TypeName="BakkalDbModel.marka_log_up">
+        <MappingFragment StoreEntitySet="marka_log_up">
+          <ScalarProperty Name="mlu_id" ColumnName="mlu_id" />
+          <ScalarProperty Name="eski_m_adi" ColumnName="eski_m_adi" />
+          <ScalarProperty Name="yeni_m_adi" ColumnName="yeni_m_adi" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol">
+      <EntityTypeMapping TypeName="BakkalDbModel.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="r_adi" ColumnName="r_adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol_log_ins_del">
+      <EntityTypeMapping TypeName="BakkalDbModel.rol_log_ins_del">
+        <MappingFragment StoreEntitySet="rol_log_ins_del">
+          <ScalarProperty Name="rlid_id" ColumnName="rlid_id" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="r_adi" ColumnName="r_adi" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_turu" ColumnName="islem_turu" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol_log_up">
+      <EntityTypeMapping TypeName="BakkalDbModel.rol_log_up">
+        <MappingFragment StoreEntitySet="rol_log_up">
+          <ScalarProperty Name="rlu_id" ColumnName="rlu_id" />
+          <ScalarProperty Name="eski_r_adi" ColumnName="eski_r_adi" />
+          <ScalarProperty Name="yeni_r_adi" ColumnName="yeni_r_adi" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="satis">
+      <EntityTypeMapping TypeName="BakkalDbModel.satis">
+        <MappingFragment StoreEntitySet="satis">
+          <ScalarProperty Name="satis_id" ColumnName="satis_id" />
+          <ScalarProperty Name="s_tarih" ColumnName="s_tarih" />
+          <ScalarProperty Name="s_durum" ColumnName="s_durum" />
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="satis_log_ins_del">
+      <EntityTypeMapping TypeName="BakkalDbModel.satis_log_ins_del">
+        <MappingFragment StoreEntitySet="satis_log_ins_del">
+          <ScalarProperty Name="slid_id" ColumnName="slid_id" />
+          <ScalarProperty Name="satis_id" ColumnName="satis_id" />
+          <ScalarProperty Name="s_tarih" ColumnName="s_tarih" />
+          <ScalarProperty Name="s_durum" ColumnName="s_durum" />
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_turu" ColumnName="islem_turu" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="satis_log_up">
+      <EntityTypeMapping TypeName="BakkalDbModel.satis_log_up">
+        <MappingFragment StoreEntitySet="satis_log_up">
+          <ScalarProperty Name="slu_id" ColumnName="slu_id" />
+          <ScalarProperty Name="eski_s_tarih" ColumnName="eski_s_tarih" />
+          <ScalarProperty Name="yeni_s_tarih" ColumnName="yeni_s_tarih" />
+          <ScalarProperty Name="eski_s_durum" ColumnName="eski_s_durum" />
+          <ScalarProperty Name="yeni_s_durum" ColumnName="yeni_s_durum" />
+          <ScalarProperty Name="eski_kullanici_id" ColumnName="eski_kullanici_id" />
+          <ScalarProperty Name="yeni_kullanici_id" ColumnName="yeni_kullanici_id" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="satis_maddeleri">
+      <EntityTypeMapping TypeName="BakkalDbModel.satis_maddeleri">
+        <MappingFragment StoreEntitySet="satis_maddeleri">
+          <ScalarProperty Name="sm_id" ColumnName="sm_id" />
+          <ScalarProperty Name="si_miktar" ColumnName="si_miktar" />
+          <ScalarProperty Name="si_fiyat" ColumnName="si_fiyat" />
+          <ScalarProperty Name="si_iskonto" ColumnName="si_iskonto" />
+          <ScalarProperty Name="satis_id" ColumnName="satis_id" />
+          <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="smaddeleri_log_ins_del">
+      <EntityTypeMapping TypeName="BakkalDbModel.smaddeleri_log_ins_del">
+        <MappingFragment StoreEntitySet="smaddeleri_log_ins_del">
+          <ScalarProperty Name="smlid_id" ColumnName="smlid_id" />
+          <ScalarProperty Name="sm_id" ColumnName="sm_id" />
+          <ScalarProperty Name="si_miktar" ColumnName="si_miktar" />
+          <ScalarProperty Name="si_fiyat" ColumnName="si_fiyat" />
+          <ScalarProperty Name="si_iskonto" ColumnName="si_iskonto" />
+          <ScalarProperty Name="satis_id" ColumnName="satis_id" />
+          <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_turu" ColumnName="islem_turu" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="smaddeleri_log_up">
+      <EntityTypeMapping TypeName="BakkalDbModel.smaddeleri_log_up">
+        <MappingFragment StoreEntitySet="smaddeleri_log_up">
+          <ScalarProperty Name="smlu_id" ColumnName="smlu_id" />
+          <ScalarProperty Name="eski_si_miktar" ColumnName="eski_si_miktar" />
+          <ScalarProperty Name="yeni_si_miktar" ColumnName="yeni_si_miktar" />
+          <ScalarProperty Name="eski_si_fiyat" ColumnName="eski_si_fiyat" />
+          <ScalarProperty Name="yeni_si_fiyat" ColumnName="yeni_si_fiyat" />
+          <ScalarProperty Name="eski_si_iskonto" ColumnName="eski_si_iskonto" />
+          <ScalarProperty Name="yeni_si_iskonto" ColumnName="yeni_si_iskonto" />
+          <ScalarProperty Name="eski_satis_id" ColumnName="eski_satis_id" />
+          <ScalarProperty Name="yeni_satis_id" ColumnName="yeni_satis_id" />
+          <ScalarProperty Name="eski_urun_id" ColumnName="eski_urun_id" />
+          <ScalarProperty Name="yeni_urun_id" ColumnName="yeni_urun_id" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stok">
+      <EntityTypeMapping TypeName="BakkalDbModel.stok">
+        <MappingFragment StoreEntitySet="stok">
+          <ScalarProperty Name="stok_id" ColumnName="stok_id" />
+          <ScalarProperty Name="s_adedi" ColumnName="s_adedi" />
+          <ScalarProperty Name="s_giris_tarihi" ColumnName="s_giris_tarihi" />
+          <ScalarProperty Name="s_bitis_tarihi" ColumnName="s_bitis_tarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stok_log_ins_del">
+      <EntityTypeMapping TypeName="BakkalDbModel.stok_log_ins_del">
+        <MappingFragment StoreEntitySet="stok_log_ins_del">
+          <ScalarProperty Name="stlid_id" ColumnName="stlid_id" />
+          <ScalarProperty Name="stok_id" ColumnName="stok_id" />
+          <ScalarProperty Name="s_adedi" ColumnName="s_adedi" />
+          <ScalarProperty Name="s_giris_tarihi" ColumnName="s_giris_tarihi" />
+          <ScalarProperty Name="s_bitis_tarihi" ColumnName="s_bitis_tarihi" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_turu" ColumnName="islem_turu" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stok_log_up">
+      <EntityTypeMapping TypeName="BakkalDbModel.stok_log_up">
+        <MappingFragment StoreEntitySet="stok_log_up">
+          <ScalarProperty Name="stlu_ip" ColumnName="stlu_ip" />
+          <ScalarProperty Name="eski_s_adedi" ColumnName="eski_s_adedi" />
+          <ScalarProperty Name="yeni_s_adedi" ColumnName="yeni_s_adedi" />
+          <ScalarProperty Name="eski_s_giris_tarihi" ColumnName="eski_s_giris_tarihi" />
+          <ScalarProperty Name="yeni_s_giris_tarihi" ColumnName="yeni_s_giris_tarihi" />
+          <ScalarProperty Name="eski_s_bitis_tarihi" ColumnName="eski_s_bitis_tarihi" />
+          <ScalarProperty Name="yeni_s_bitis_tarihi" ColumnName="yeni_s_bitis_tarihi" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BakkalDbModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="urun">
+      <EntityTypeMapping TypeName="BakkalDbModel.urun">
+        <MappingFragment StoreEntitySet="urun">
+          <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+          <ScalarProperty Name="u_adi" ColumnName="u_adi" />
+          <ScalarProperty Name="u_barkodu" ColumnName="u_barkodu" />
+          <ScalarProperty Name="u_uretim_tarihi" ColumnName="u_uretim_tarihi" />
+          <ScalarProperty Name="u_tuketim_tarihi" ColumnName="u_tuketim_tarihi" />
+          <ScalarProperty Name="u_fiyat" ColumnName="u_fiyat" />
+          <ScalarProperty Name="u_agirlik" ColumnName="u_agirlik" />
+          <ScalarProperty Name="u_rengi" ColumnName="u_rengi" />
+          <ScalarProperty Name="marka_id" ColumnName="marka_id" />
+          <ScalarProperty Name="kategori_id" ColumnName="kategori_id" />
+          <ScalarProperty Name="stok_id" ColumnName="stok_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="urun_log_ins_del">
+      <EntityTypeMapping TypeName="BakkalDbModel.urun_log_ins_del">
+        <MappingFragment StoreEntitySet="urun_log_ins_del">
+          <ScalarProperty Name="ulid_id" ColumnName="ulid_id" />
+          <ScalarProperty Name="urun_id" ColumnName="urun_id" />
+          <ScalarProperty Name="u_adi" ColumnName="u_adi" />
+          <ScalarProperty Name="u_barkodu" ColumnName="u_barkodu" />
+          <ScalarProperty Name="u_uretim_tarihi" ColumnName="u_uretim_tarihi" />
+          <ScalarProperty Name="u_tuketim_tarihi" ColumnName="u_tuketim_tarihi" />
+          <ScalarProperty Name="u_fiyat" ColumnName="u_fiyat" />
+          <ScalarProperty Name="u_agirlik" ColumnName="u_agirlik" />
+          <ScalarProperty Name="u_rengi" ColumnName="u_rengi" />
+          <ScalarProperty Name="marka_id" ColumnName="marka_id" />
+          <ScalarProperty Name="kategori_id" ColumnName="kategori_id" />
+          <ScalarProperty Name="stok_id" ColumnName="stok_id" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_turu" ColumnName="islem_turu" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="urun_log_up">
+      <EntityTypeMapping TypeName="BakkalDbModel.urun_log_up">
+        <MappingFragment StoreEntitySet="urun_log_up">
+          <ScalarProperty Name="ulu_id" ColumnName="ulu_id" />
+          <ScalarProperty Name="eski_u_adi" ColumnName="eski_u_adi" />
+          <ScalarProperty Name="yeni_u_adi" ColumnName="yeni_u_adi" />
+          <ScalarProperty Name="eski_u_barkodu" ColumnName="eski_u_barkodu" />
+          <ScalarProperty Name="yeni_u_barkodu" ColumnName="yeni_u_barkodu" />
+          <ScalarProperty Name="eski_u_uretim_tarihi" ColumnName="eski_u_uretim_tarihi" />
+          <ScalarProperty Name="yeni_u_uretim_tarihi" ColumnName="yeni_u_uretim_tarihi" />
+          <ScalarProperty Name="eski_u_tuketim_tarihi" ColumnName="eski_u_tuketim_tarihi" />
+          <ScalarProperty Name="yeni_u_tuketim_tarihi" ColumnName="yeni_u_tuketim_tarihi" />
+          <ScalarProperty Name="eski_u_fiyat" ColumnName="eski_u_fiyat" />
+          <ScalarProperty Name="yeni_u_fiyat" ColumnName="yeni_u_fiyat" />
+          <ScalarProperty Name="eski_u_agirlik" ColumnName="eski_u_agirlik" />
+          <ScalarProperty Name="yeni_u_agirlik" ColumnName="yeni_u_agirlik" />
+          <ScalarProperty Name="eski_u_rengi" ColumnName="eski_u_rengi" />
+          <ScalarProperty Name="yeni_u_rengi" ColumnName="yeni_u_rengi" />
+          <ScalarProperty Name="eski_marka_id" ColumnName="eski_marka_id" />
+          <ScalarProperty Name="yeni_marka_id" ColumnName="yeni_marka_id" />
+          <ScalarProperty Name="eski_kategori_id" ColumnName="eski_kategori_id" />
+          <ScalarProperty Name="yeni_kategori_id" ColumnName="yeni_kategori_id" />
+          <ScalarProperty Name="eski_stok_id" ColumnName="eski_stok_id" />
+          <ScalarProperty Name="yeni_stok_id" ColumnName="yeni_stok_id" />
+          <ScalarProperty Name="islem_tarihi" ColumnName="islem_tarihi" />
+          <ScalarProperty Name="islem_ip" ColumnName="islem_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="BakkalDbModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="BakkalDbModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="BakkalDbModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="BakkalDbModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="BakkalDbModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BakkalDbModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BakkalDbModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

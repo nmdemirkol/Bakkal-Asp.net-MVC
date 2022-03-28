@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/main.css">
+    <link rel="stylesheet" href="~/Content/fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="~/Content/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/normalize.css/normalize.css">
+
+
+</head>
+
+<body>
+
+ 
+    <div class="page">
+
+
+        <div class="navigation-left-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 logo">
+                        BAKKAL.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 navigation">
+
+
+                        <a href="/Home/Index" class="item"><i class="fa fa-tachometer-alt"></i><span>Ana Sayfa</span></a>
+                        <a href="/Product/Index" class="item"><i class="fas fa-box"></i><span>Ürünler </span></a>
+                        <a href="/User/Index" class="item"><i class="fa fa-users"></i><span>Kullanıcılar </span></a>
+                        <a href="/Role/Index" class="item"><i class="fa fa-user-tag"></i><span>Roller </span></a>
+                        <a href="/Catagory/Index" class="item"><i class="fa fa-clipboard-list"></i><span>Kategoriler</span></a>
+                        <a href="/Brand/Index" class="item"><i class="fa fa-boxes"></i><span>Markalar</span></a>
+                       <a href="/Sales/Index" class="item"><i class="fa fa-shopping-basket"></i><span>Satışlar</span></a>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="container-fluid top-bar">
+                <div class="header">@ViewBag.Title </div>
+                <div class="user">
+                    @if (Request.Cookies["user"] == null)
+                    {
+                        <a href="#">Giriş Yap</a>
+                    }
+                    else
+                    {
+                        if (Request.Cookies["user"].Value == "")
+                        {
+                            <a href="#">Giriş Yap</a>
+                        }
+                        else
+                        {
+                            <a href="\Login\LoginOut">Çıkış Yap</a>
+                            <a href="">@Request.Cookies["user"].Value<div class="icon">@Request.Cookies["user"].Value[0]</div></a>
+
+                        }
+
+
+                    }
+                </div>
+
+
+            </div>
+
+            @RenderBody()
+        </div>
+    </div>
+</body>
+
+</html>

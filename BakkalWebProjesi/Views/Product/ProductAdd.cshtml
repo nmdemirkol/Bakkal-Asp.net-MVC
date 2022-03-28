@@ -1,0 +1,237 @@
+﻿@model BakkalWebProjesi.ViewModels.ProductModels.ProductClass
+
+@{
+    ViewBag.Title = "Ürün Ekle";
+}
+<form action="/Product/ProductAdd" method="post" enctype="multipart/form-data">
+
+    <div class="container user-add">
+        <div class="row ">
+            <div class="col-md-12">
+                <a href="/Product/Index" class="button">Tüm Ürünleri Gör</a>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-3 text">
+                Ürün Adı :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="ürün adı" name="product.u_adi" id="product_name" value="@Model.product.u_adi">
+            </div>
+
+
+            <div class="col-md-3 text">
+                Ürün Barkodu :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="XXXXXX" name="product.u_barkodu" id="barcode" value="@Model.product.u_barkodu">
+            </div>
+
+            <div class="col-md-3 text">
+                Ürün Üretim Tarihi :
+            </div>
+            <div class="col-md-9 input">
+                <input type="date" name="product.u_uretim_tarihi" id="production_date" value="@Model.product.u_uretim_tarihi">
+            </div>
+
+
+            <div class="col-md-3 text">
+                Ürün Tüketim Tarihi :
+            </div>
+            <div class="col-md-9 input">
+                <input type="date" name="product.u_tuketim_tarihi" id="consumption_date" value="@Model.product.u_tuketim_tarihi">
+            </div>
+
+            <div class="col-md-3 text">
+                Ürün Rengi :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="ürün rengi" name="product.u_rengi" id="color" value="@Model.product.u_rengi">
+            </div>
+
+            <div class="col-md-3 text">
+                Ürün Ağırlığı :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="kg" name="product.u_agirlik" id="weight" value="@Model.product.u_agirlik">
+            </div>
+
+
+            <div class="col-md-3 text">
+                Ürün Fiyatı :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="00 ₺" name="product.u_fiyat" id="price" value="@Model.product.u_fiyat">
+            </div>
+
+            <div class="col-md-3 text">
+                Ürün Markasını Seçiniz
+            </div>
+            <div class="col-md-9 custom-select">
+
+
+                <select name="product.marka_id" id="marka_id">
+                    <option>-- Markalar --</option>
+
+                    @{
+                        for (int i = 0; i < Model.brandList.Count; i++)
+                        {
+                            if (Model.brandList[i].marka_id == Model.product.marka_id)
+                            {
+                                <option value="@Model.brandList[i].marka_id" selected>@Model.brandList[i].m_adi</option>
+                            }
+                            else
+                            {
+                                <option value="@Model.brandList[i].marka_id">@Model.brandList[i].m_adi</option>
+                            }
+                        }
+
+                    }
+
+
+                </select>
+
+            </div>
+
+
+            <div class="col-md-3 text">
+                Ürün Katagorisini Seçiniz
+            </div>
+            <div class="col-md-9 custom-select">
+
+
+                <select name="product.kategori_id" id="kategori_id">
+                    <option>-- Katagoriler --</option>
+
+                    @{
+                        for (int i = 0; i < Model.catagoryList.Count; i++)
+                        {
+                            if (Model.catagoryList[i].kategori_id == Model.product.kategori_id)
+                            {
+                                <option value="@Model.catagoryList[i].kategori_id" selected>@Model.catagoryList[i].k_adi</option>
+                            }
+                            else
+                            {
+                                <option value="@Model.catagoryList[i].kategori_id">@Model.catagoryList[i].k_adi</option>
+                            }
+                        }
+
+                    }
+
+
+                </select>
+
+            </div>
+
+            <div class="col-md-3 text">
+                Ürün Stoğu :
+            </div>
+
+            @{
+                int a;
+                if (Model.stockList.Count>0)
+                {
+                    a = Model.stockList[Model.stockList.Count - 1].stok_id + 1;
+
+                }
+                else
+                {
+                    a = 0;
+                }
+
+            }
+
+            <div class="col-md-9 input">
+                <input type="text" placeholder="stok sayısı" name="stock.s_adedi" id="stok" value="@Model.stock.s_adedi">
+            </div>
+            <input hidden type="text" placeholder="stok date" name="stock.s_giris_tarihi" id="stok" value="@DateTime.Today">
+            <input hidden type="text" placeholder="stok sayısı" name="stock.stok_id" id="stok" value="@a" />
+            <input hidden type="text" placeholder="stok sayısı" name="product.stok_id" id="stok" value="@a" />
+
+           @*
+
+
+                <div class="col-md-3 text">
+                    Kullanıcı Aktiflik Durumu :
+                </div>
+                <div class="col-md-9 input">
+                    <div class="form-check">
+
+
+                        @{
+                            if (Model.user.k_durum == true)
+                            {
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="k_durum" id="durum"
+                                           value="True" checked>
+                                    Aktif
+
+                                </label>
+                                <br>
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="k_durum" id="durum"
+                                           value="False">
+                                    Pasif
+
+                                </label>
+                            }
+                            else
+                            {
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="k_durum" id="durum"
+                                           value="True">
+                                    Aktif
+
+                                </label>
+                                <br>
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="k_durum" id="durum"
+                                           value="False" checked>
+                                    Pasif
+
+                                </label>
+                            }
+                        }
+
+                    </div>
+                </div>
+                <div class="col-md-3 text">
+                    Kullanıcı Rolünü Seçiniz :
+                </div>
+                <div class="col-md-9 custom-select">
+
+
+                    <select name="rol_id" id="rol_id">
+                        <option>-- Kullanıcı Rolünü Seçiniz --</option>
+
+                        @{
+                            for (int i = 0; i < Model.roles.Count; i++)
+                            {
+                                if (Model.roles[i].rol_id == Model.user.rol_id)
+                                {
+                                    <option value="@Model.roles[i].rol_id" selected>@Model.roles[i].r_adi</option>
+                                }
+                                else
+                                {
+                                    <option value="@Model.roles[i].rol_id">@Model.roles[i].r_adi</option>
+                                }
+                            }
+
+                        }
+
+
+                    </select>
+
+                </div>
+            *@
+
+            <div class="col-md-12 send">
+                <button type="submit" class="button">Oluştur</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</form>

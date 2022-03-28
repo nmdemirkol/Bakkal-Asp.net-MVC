@@ -1,0 +1,29 @@
+﻿@model BakkalWebProjesi.ViewModels.SalesModels.SalesClass
+@{
+    ViewBag.Title = "SalesDetail";
+}
+
+<div class="container ">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="user-detail">
+
+                <div class="main">
+                    <div class="group2">
+                        <div class="username">@Model.sales.kullanici.k_adi</div>
+                        <div class="role">@Model.sales.s_tarih.Date.Day.@Model.sales.s_tarih.Date.Month.@Model.sales.s_tarih.Date.Year</div>
+                    </div>
+
+                    <div> Miktarı: @Model.salesSubstances.si_miktar</div>
+                    <div> Fiyatı: @Model.salesSubstances.si_fiyat</div>
+                    <div> İskonto : @Model.salesSubstances.si_iskonto</div>
+                    <div class="group">
+                        <div> Ürün Adı : @Model.salesSubstances.urun.u_adi </div>  | 
+                        <div> Ürün Fiyatı : @Model.salesSubstances.urun.u_fiyat </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

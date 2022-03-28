@@ -1,0 +1,43 @@
+﻿@model BakkalWebProjesi.ViewModels.ProductModels.BrandClass
+@{
+    ViewBag.Title = "Marka Sil";
+}
+
+<div class="roles container">
+    <div class="row ">
+        <div class="col-md-12">
+            <a href="/Brand/Index" class="button">Tüm Markaları Gör</a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="role-item">
+                <div class="text">@Model.brand.m_adi</div>
+
+            </div>
+            <div class="role-item">
+                <div class="text">
+                    Bu markayı silmek istediğinize emin misiniz? <hr />
+                    Bu markaay sahip <b> @Model.productCount </b> ürün bulunmaktadır.<hr />
+                    @if (@Model.productCount > 0)
+                    { <p>İlk önce bu markaya sahip ürünleri silmeniz gerekmektedir.</p>}
+                </div>
+                @if (@Model.productCount <= 0)
+                {
+                    <div class="right">
+                        <form action="/Brand/BrandDelete" method="post" enctype="multipart/form-data">
+                            <input hidden type="text" name="marka_id" id="id" value="@Model.brand.marka_id" />
+
+                            <button class="delete">
+                                <i class="fas fa-trash-alt"></i> Sil
+                            </button>
+                        </form>
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>

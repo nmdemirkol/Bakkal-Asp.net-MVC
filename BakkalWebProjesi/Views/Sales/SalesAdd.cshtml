@@ -1,0 +1,134 @@
+﻿@model BakkalWebProjesi.ViewModels.SalesModels.SalesAddClass
+@{
+    ViewBag.Title = "Satış Yap";
+}
+
+
+<form action="/Sales/SalesAdd" method="post" enctype="multipart/form-data">
+
+    <div class="container user-add">
+        <div class="row ">
+            <div class="col-md-12">
+                <a href="/Product/Index" class="button">Tüm Ürünleri Gör</a>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-5">
+                <div class="user-detail">
+
+                    <div class="main">
+                        <div class="group2">
+                            <div class="username">@Model.product.u_adi</div>
+                            <div class="role">@Model.product.kategori.k_adi</div>
+                        </div>
+
+                        <div> Marka Adı: @Model.product.marka.m_adi</div>
+                        <div> Stok Adedi: @Model.product.stok.s_adedi</div>
+                        <div> Ağırlığı: @Model.product.u_agirlik</div>
+                        <div> Barkodu: @Model.product.u_barkodu</div>
+                        <div> Rengi: @Model.product.u_rengi</div>
+                        <div> Üretim Tarihi: @Model.product.u_uretim_tarihi.Value.Day.@Model.product.u_uretim_tarihi.Value.Month.@Model.product.u_uretim_tarihi.Value.Year  </div>
+                        <div> Tüketim Tarihi: @Model.product.u_tuketim_tarihi.Value.Day.@Model.product.u_tuketim_tarihi.Value.Month.@Model.product.u_tuketim_tarihi.Value.Year </div>
+                        <div> Stok Giriş Tarihi:@Model.product.stok.s_giris_tarihi.Day.@Model.product.stok.s_giris_tarihi.Month.@Model.product.stok.s_giris_tarihi.Year</div>
+                        @if (@Model.product.stok.s_bitis_tarihi != null)
+                        {
+                            <div> Stok Bitiş Tarihi: @Model.product.stok.s_bitis_tarihi.Value.Day.@Model.product.stok.s_bitis_tarihi.Value.Month.@Model.product.stok.s_bitis_tarihi.Value.Year </div>
+
+                        }
+
+                        <div> Fiyatı: @Model.product.u_fiyat₺ </div>
+
+                 
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="col-md-7">
+                <div class="row ">
+                 
+                    <input hidden type="text" placeholder="ürün adı" name="urun_id" id="product_id" value="@Model.product.urun_id">
+                    <input hidden type="text" placeholder="ürün adı" name="kullanici_id" id="product_id" value="@Request.Cookies["userId"].Value">
+                    
+
+
+                    <div class="col-md-3 text">
+                        Miktarı Giriniz :
+                    </div>
+                    <div class="col-md-9 input">
+                        <input onfocusout="myFunction()" type="text" placeholder="miktar" name="si_miktar" id="miktar" value="0">
+                    </div>
+                  
+                    <div class="col-md-3 text">
+                        Ürün İskonto :
+                    </div>
+                    <div class="col-md-9 input">
+                        <input onfocusout="myFunction()" type="text" placeholder="iskonto" name="si_iskonto" id="iskonto" value="0">
+                    </div>
+
+
+                    <div class="col-md-3 text">
+                        Toplam Fiyat :
+                    </div>
+                    <div class="col-md-9 input">
+                        <input hidden type="text" placeholder="fiyat" name="si_fiyat" id="fiyat" value="">
+                  <div style="line-height:60px" id="fiyattext"></div>
+                      </div>
+
+                   
+
+
+                    <div class="col-md-3 text">
+                        Satış Tarihi :
+                    </div>
+                    <div class="col-md-9 input">
+                        <input type="text" name="s_tarih" id="production_date" value="@DateTime.Today.Date">
+                    </div>
+
+                    <div class="col-md-3 text">
+                        Satış Durumu :
+                    </div>
+                    <div class="col-md-9 input">
+                        <input   type="text" placeholder="Durumu" name="s_durum" id="situation" value="">
+                    </div>
+
+                   
+
+                
+
+
+                    <div class="col-md-12 send">
+                        <button type="submit" class="button">Oluştur</button>
+
+                    </div>
+                 
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script>
+    function myFunction() {
+        var miktar = parseInt(document.getElementById("miktar").value);
+        var iskonto = parseInt(document.getElementById("iskonto").value);
+
+        var sonuc = @Model.product.u_fiyat *((100-parseFloat(iskonto))/100);
+
+@*
+        var sonuc = 100.0 -  parseFloat(iskonto);
+        sonuc = sonuc / 100.0;
+        sonuc = sonuc * parseFloat( @Model.product.u_fiyat);
+        sonuc = @Model.product.u_fiyat - sonuc;
+        *@
+        document.getElementById("fiyat").value = miktar * sonuc;
+        document.getElementById("fiyattext").innerHTML = miktar * sonuc +"₺";
+    }
+</script>

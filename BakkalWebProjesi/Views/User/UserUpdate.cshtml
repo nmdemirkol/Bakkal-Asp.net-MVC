@@ -1,0 +1,142 @@
+﻿@model BakkalWebProjesi.ViewModels.UserModels.UserClass
+
+@{
+    ViewBag.Title = "Kullanıcı Güncelle";
+}
+
+<form action="/User/UserUpdate" method="post" enctype="multipart/form-data">
+
+    <div class="container user-add">
+        <div class="row ">
+            <div class="col-md-12">
+                <a href="/User/Index" class="button">Tüm Kullanıcıları Gör</a>
+            </div>
+        </div>
+        <div class="row">
+            <input type="hidden" name="kullanici_id" value="@Model.user.kullanici_id" />
+
+            <div class="col-md-3 text">
+                Kullanıcının Kullanıcı Adı :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="örnekkullanici" name="k_kullaniciadi" id="username" value="@Model.user.k_kullaniciadi">
+            </div>
+            <div class="col-md-3 text">
+                Kullanıcı Parolası :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="*****" name="k_parola" id="password" value="@Model.user.k_parola">
+            </div>
+            <div class="col-md-3 text">
+                Kullanıcı Parolası Tekrar :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="*****" id="password" value="@Model.user.k_parola">
+            </div>
+            <div class="col-md-3 text">
+                Kullanıcı Adı :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="Kullanıcının adını giriniz" name="k_adi" id="firstname" value="@Model.user.k_adi">
+            </div>
+            <div class="col-md-3 text">
+                Kullanıcı Soyadı :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="Kullanıcının soyadını giriniz" name="k_soyadi" id="lastname" value="@Model.user.k_soyadi">
+            </div>
+            <div class="col-md-3 text">
+                Kullanıcı E-postası :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="öenek@örnek.com" name="k_eposta" id="email" value="@Model.user.k_eposta">
+            </div>
+            <div class="col-md-3 text">
+                Kullanıcı Telefon Numarası :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="05** *** ** **" name="k_telefon" id="phone" value="@Model.user.k_telefon">
+            </div>
+            <div class="col-md-3 text">
+                Kullanıcı Aktiflik Durumu :
+            </div>
+            <div class="col-md-9 input">
+                <div class="form-check">
+
+
+                    @{
+                        if (Model.user.k_durum == true)
+                        {
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="k_durum" id="durum"
+                                       value="True" checked>
+                                Aktif
+
+                            </label>
+                            <br>
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="k_durum" id="durum"
+                                       value="False">
+                                Pasif
+
+                            </label>
+                        }
+                        else
+                        {
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="k_durum" id="durum"
+                                       value="True">
+                                Aktif
+
+                            </label>
+                            <br>
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="k_durum" id="durum"
+                                       value="False" checked>
+                                Pasif
+
+                            </label>
+                        }
+                    }
+
+                </div>
+            </div>
+            <div class="col-md-3 text">
+                Kullanıcı Rolünü Seçiniz :
+            </div>
+            <div class="col-md-9 custom-select">
+
+
+                <select name="rol_id" id="rol_id">
+                    <option>-- Kullanıcı Rolünü Seçiniz --</option>
+
+                    @{
+                        for (int i = 0; i < Model.roles.Count; i++)
+                        {
+                            if (Model.roles[i].rol_id == Model.user.rol_id)
+                            {
+                                <option value="@Model.roles[i].rol_id" selected>@Model.roles[i].r_adi</option>
+                            }
+                            else
+                            {
+                                <option value="@Model.roles[i].rol_id">@Model.roles[i].r_adi</option>
+                            }
+                        }
+
+                    }
+
+
+                </select>
+
+            </div>
+
+
+            <div class="col-md-12 send">
+                <button type="submit" class="button">Güncelle</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</form>

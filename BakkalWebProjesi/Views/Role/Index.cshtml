@@ -1,0 +1,32 @@
+﻿@model List<BakkalWebProjesi.Models.rol>
+@{
+    ViewBag.Title = "Roller";
+}
+
+<div class="roles container">
+    <div class="row ">
+        <div class="col-md-12">
+            <a href="/Role/RoleAdd" class="button">Yeni Rol Ekle</a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+
+                <div class="role-item">
+                    <div class="text">@Model[i].r_adi</div>
+                    <div class="right">
+                        <a href="/Role/RoleUpdate?id=@Model[i].rol_id">
+                            <div class="update"><i class="fas fa-edit"></i></div>
+                        </a>
+                        <a href="/Role/RoleDelete?id=@Model[i].rol_id">
+                            <div class="delete"><i class="fas fa-trash-alt"></i></div>
+                        </a>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

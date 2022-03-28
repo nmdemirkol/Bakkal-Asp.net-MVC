@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Marka Ekle";
+}
+
+<form action="/Brand/BrandAdd" method="post" enctype="multipart/form-data">
+
+    <div class="container user-add">
+        <div class="row ">
+            <div class="col-md-12">
+                <a href="/Brand/Index" class="button">Tüm Markaları Gör</a>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-3 text">
+                Marka Adı :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="marka adı" name="m_adi" id="marka_name" value="">
+            </div>
+
+
+
+            <div class="col-md-12 send">
+                <button type="submit" class="button">Oluştur</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</form>

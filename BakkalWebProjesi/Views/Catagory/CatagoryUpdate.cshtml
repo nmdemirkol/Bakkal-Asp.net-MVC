@@ -1,0 +1,35 @@
+﻿@model BakkalWebProjesi.Models.kategori
+@{
+    ViewBag.Title = "Kategori Güncelle";
+}
+
+
+<form action="/Catagory/CatagoryUpdate" method="post" enctype="multipart/form-data">
+
+    <div class="container user-add">
+        <div class="row ">
+            <div class="col-md-12">
+                <a href="/Catagory/Index" class="button">Tüm Kategorileri Gör</a>
+            </div>
+        </div>
+        <div class="row">
+            <input type="hidden" name="kategori_id" value="@Model.kategori_id" />
+
+            <div class="col-md-3 text">
+                Kategori Adı :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="kategori adı" name="k_adi" id="catagory_name" value="@Model.k_adi">
+            </div>
+
+
+
+            <div class="col-md-12 send">
+                <button type="submit" class="button">Güncelle</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</form>

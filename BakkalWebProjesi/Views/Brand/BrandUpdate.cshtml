@@ -1,0 +1,35 @@
+﻿@model BakkalWebProjesi.Models.marka
+@{
+    ViewBag.Title = "Marka Güncelle";
+}
+
+
+<form action="/Brand/BrandUpdate" method="post" enctype="multipart/form-data">
+
+    <div class="container user-add">
+        <div class="row ">
+            <div class="col-md-12">
+                <a href="/Brand/Index" class="button">Tüm Markaları Gör</a>
+            </div>
+        </div>
+        <div class="row">
+            <input type="hidden" name="marka_id" value="@Model.marka_id" />
+
+            <div class="col-md-3 text">
+                Marka Adı :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="marka adı" name="m_adi" id="brand_name" value="@Model.m_adi">
+            </div>
+
+
+
+            <div class="col-md-12 send">
+                <button type="submit" class="button">Güncelle</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</form>

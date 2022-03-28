@@ -1,0 +1,35 @@
+﻿@model BakkalWebProjesi.Models.rol
+@{
+    ViewBag.Title = "Rol Güncelle";
+}
+
+
+<form action="/Role/RoleUpdate" method="post" enctype="multipart/form-data">
+
+    <div class="container user-add">
+        <div class="row ">
+            <div class="col-md-12">
+                <a href="/Role/Index" class="button">Tüm Rolleri Gör</a>
+            </div>
+        </div>
+        <div class="row">
+          <input type="hidden" name="rol_id" value="@Model.rol_id" />
+
+            <div class="col-md-3 text">
+                Rol Adı :
+            </div>
+            <div class="col-md-9 input">
+                <input type="text" placeholder="rol adı" name="r_adi" id="username" value="@Model.r_adi">
+            </div>
+
+
+
+            <div class="col-md-12 send">
+                <button type="submit" class="button">Güncelle</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</form>

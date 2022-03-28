@@ -1,0 +1,36 @@
+﻿@model BakkalWebProjesi.Models.urun
+@{
+    ViewBag.Title = "ProductDelete";
+}
+
+
+<div class="container ">
+    <div class="row ">
+        <div class="col-md-12">
+            <a href="/User/Index" class="button">Tüm Kullanıcıları Gör</a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="user-delete">
+                <div class="group2">
+                    <div class="username">@Model.u_adi</div>
+                </div>
+                <div class="group">
+                    <div class="firstname">@Model.u_rengi</div>
+                    <div class="lastname">@Model.u_fiyat</div>
+                </div>
+                <div class="text">
+                    Bu ürünü silmek istediğinize eminmisiniz?
+                </div>
+                <form action="/Product/ProductDelete" method="post" enctype="multipart/form-data">
+                    <input hidden type="text" name="urun_id" id="product_id" value="@Model.urun_id" />
+           
+                    <button class="delete">
+                        <i class="fas fa-trash-alt"></i> Sil
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

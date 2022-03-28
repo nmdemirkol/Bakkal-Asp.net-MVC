@@ -1,0 +1,44 @@
+﻿@model  BakkalWebProjesi.Models.urun
+@{
+    ViewBag.Title = "ProductDetail";
+}
+
+<div class="container ">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="user-detail">
+             
+                <div class="main">
+                    <div class="group2">
+                        <div class="username">@Model.u_adi</div>
+                        <div class="role">@Model.kategori.k_adi</div>
+                    </div>
+            
+                    <div> Marka Adı: @Model.marka.m_adi</div>
+                    <div> Stok Adedi: @Model.stok.s_adedi</div>
+                    <div> Ağırlığı: @Model.u_agirlik</div>
+                    <div> Barkodu: @Model.u_barkodu</div>
+                    <div> Rengi: @Model.u_rengi</div>
+                    <div> Üretim Tarihi: @Model.u_uretim_tarihi.Value.Day.@Model.u_uretim_tarihi.Value.Month.@Model.u_uretim_tarihi.Value.Year  </div>
+                    <div> Tüketim Tarihi: @Model.u_tuketim_tarihi.Value.Day.@Model.u_tuketim_tarihi.Value.Month.@Model.u_tuketim_tarihi.Value.Year </div>
+                    <div> Stok Giriş Tarihi:@Model.stok.s_giris_tarihi.Day.@Model.stok.s_giris_tarihi.Month.@Model.stok.s_giris_tarihi.Year</div>
+                    @if (@Model.stok.s_bitis_tarihi != null)
+                    {
+                        <div> Stok Bitiş Tarihi: @Model.stok.s_bitis_tarihi.Value.Day.@Model.stok.s_bitis_tarihi.Value.Month.@Model.stok.s_bitis_tarihi.Value.Year </div>
+
+                    }
+                
+                    <div> Fiyatı: @Model.u_fiyat₺ </div>
+
+                    <a href="/Product/ProductUpdate?id=@Model.urun_id" class="edit-btn" title="ürünü düzenle">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </a>
+                    <a href="/Product/ProductDelete?id=@Model.urun_id" class="delete-btn" title="ürünü sil">
+                        <i class="fa fa-trash-alt"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

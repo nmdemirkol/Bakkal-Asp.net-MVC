@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BakkalDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="kategori">
+    <Key>
+      <PropertyRef Name="kategori_id" />
+    </Key>
+    <Property Name="kategori_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="k_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="urun" Relationship="Self.FK_urun_kategori" FromRole="kategori" ToRole="urun" />
+  </EntityType>
+  <EntityType Name="kategori_log_ins_del">
+    <Key>
+      <PropertyRef Name="kalid_id" />
+    </Key>
+    <Property Name="kalid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kategori_id" Type="Int32" Nullable="false" />
+    <Property Name="k_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_turu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kategori_log_up">
+    <Key>
+      <PropertyRef Name="kalu_ip" />
+    </Key>
+    <Property Name="kalu_ip" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eski_k_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_k_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kullanici">
+    <Key>
+      <PropertyRef Name="kullanici_id" />
+    </Key>
+    <Property Name="kullanici_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="k_kullaniciadi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="k_parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="k_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="k_soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="k_eposta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="k_telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="k_durum" Type="Boolean" Nullable="false" />
+    <Property Name="rol_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="rol" Relationship="Self.FK_kullanici_rol" FromRole="kullanici" ToRole="rol" />
+    <NavigationProperty Name="satis" Relationship="Self.FK_satis_kullanici" FromRole="kullanici" ToRole="satis" />
+  </EntityType>
+  <EntityType Name="kullanici_log_ins_del">
+    <Key>
+      <PropertyRef Name="klid_ip" />
+    </Key>
+    <Property Name="klid_ip" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullanici_id" Type="Int32" Nullable="false" />
+    <Property Name="k_kullaniciadi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="k_parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="k_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="k_soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="k_eposta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="k_telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="k_durum" Type="Boolean" />
+    <Property Name="rol_id" Type="Int32" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_turu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kullanici_log_up">
+    <Key>
+      <PropertyRef Name="klu_id" />
+    </Key>
+    <Property Name="klu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eski_k_kullaniciadi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_k_kullaniciadi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="eski_k_parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_k_parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eski_k_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_k_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eski_k_soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_k_soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eski_k_eposta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_k_eposta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="eski_k_telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_k_telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eski_k_durum" Type="Boolean" />
+    <Property Name="yeni_k_durum" Type="Boolean" />
+    <Property Name="eski_rol_id" Type="Int32" />
+    <Property Name="yeni_rol_id" Type="Int32" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="marka">
+    <Key>
+      <PropertyRef Name="marka_id" />
+    </Key>
+    <Property Name="marka_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="m_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="urun" Relationship="Self.FK_urun_marka" FromRole="marka" ToRole="urun" />
+  </EntityType>
+  <EntityType Name="marka_log_ins_del">
+    <Key>
+      <PropertyRef Name="mlid_id" />
+    </Key>
+    <Property Name="mlid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="marka_id" Type="Int32" Nullable="false" />
+    <Property Name="m_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_turu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="marka_log_up">
+    <Key>
+      <PropertyRef Name="mlu_id" />
+    </Key>
+    <Property Name="mlu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eski_m_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_m_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rol">
+    <Key>
+      <PropertyRef Name="rol_id" />
+    </Key>
+    <Property Name="rol_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="r_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="kullanici" Relationship="Self.FK_kullanici_rol" FromRole="rol" ToRole="kullanici" />
+  </EntityType>
+  <EntityType Name="rol_log_ins_del">
+    <Key>
+      <PropertyRef Name="rlid_id" />
+    </Key>
+    <Property Name="rlid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rol_id" Type="Int32" Nullable="false" />
+    <Property Name="r_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_turu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rol_log_up">
+    <Key>
+      <PropertyRef Name="rlu_id" />
+    </Key>
+    <Property Name="rlu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eski_r_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_r_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="satis">
+    <Key>
+      <PropertyRef Name="satis_id" />
+    </Key>
+    <Property Name="satis_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="s_tarih" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="s_durum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kullanici_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="kullanici" Relationship="Self.FK_satis_kullanici" FromRole="satis" ToRole="kullanici" />
+    <NavigationProperty Name="satis_maddeleri" Relationship="Self.FK_satis_maddeleri_satis" FromRole="satis" ToRole="satis_maddeleri" />
+  </EntityType>
+  <EntityType Name="satis_log_ins_del">
+    <Key>
+      <PropertyRef Name="slid_id" />
+    </Key>
+    <Property Name="slid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="satis_id" Type="Int32" Nullable="false" />
+    <Property Name="s_tarih" Type="DateTime" Precision="0" />
+    <Property Name="s_durum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kullanici_id" Type="Int32" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_turu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="satis_log_up">
+    <Key>
+      <PropertyRef Name="slu_id" />
+    </Key>
+    <Property Name="slu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eski_s_tarih" Type="DateTime" Precision="0" />
+    <Property Name="yeni_s_tarih" Type="DateTime" Precision="0" />
+    <Property Name="eski_s_durum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_s_durum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eski_kullanici_id" Type="Int32" />
+    <Property Name="yeni_kullanici_id" Type="Int32" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="satis_maddeleri">
+    <Key>
+      <PropertyRef Name="sm_id" />
+    </Key>
+    <Property Name="sm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="si_miktar" Type="Double" Nullable="false" />
+    <Property Name="si_fiyat" Type="Double" Nullable="false" />
+    <Property Name="si_iskonto" Type="Double" />
+    <Property Name="satis_id" Type="Int32" Nullable="false" />
+    <Property Name="urun_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="satis" Relationship="Self.FK_satis_maddeleri_satis" FromRole="satis_maddeleri" ToRole="satis" />
+    <NavigationProperty Name="urun" Relationship="Self.FK_satis_maddeleri_urun" FromRole="satis_maddeleri" ToRole="urun" />
+  </EntityType>
+  <EntityType Name="smaddeleri_log_ins_del">
+    <Key>
+      <PropertyRef Name="smlid_id" />
+    </Key>
+    <Property Name="smlid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sm_id" Type="Int32" Nullable="false" />
+    <Property Name="si_miktar" Type="Double" />
+    <Property Name="si_fiyat" Type="Double" />
+    <Property Name="si_iskonto" Type="Double" />
+    <Property Name="satis_id" Type="Int32" />
+    <Property Name="urun_id" Type="Int32" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_turu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="smaddeleri_log_up">
+    <Key>
+      <PropertyRef Name="smlu_id" />
+    </Key>
+    <Property Name="smlu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eski_si_miktar" Type="Double" />
+    <Property Name="yeni_si_miktar" Type="Double" />
+    <Property Name="eski_si_fiyat" Type="Double" />
+    <Property Name="yeni_si_fiyat" Type="Double" />
+    <Property Name="eski_si_iskonto" Type="Double" />
+    <Property Name="yeni_si_iskonto" Type="Double" />
+    <Property Name="eski_satis_id" Type="Int32" />
+    <Property Name="yeni_satis_id" Type="Int32" Nullable="false" />
+    <Property Name="eski_urun_id" Type="Int32" />
+    <Property Name="yeni_urun_id" Type="Int32" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stok">
+    <Key>
+      <PropertyRef Name="stok_id" />
+    </Key>
+    <Property Name="stok_id" Type="Int32" Nullable="false" />
+    <Property Name="s_adedi" Type="Int32" Nullable="false" />
+    <Property Name="s_giris_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="s_bitis_tarihi" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="urun" Relationship="Self.FK_urun_stok" FromRole="stok" ToRole="urun" />
+  </EntityType>
+  <EntityType Name="stok_log_ins_del">
+    <Key>
+      <PropertyRef Name="stlid_id" />
+    </Key>
+    <Property Name="stlid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="stok_id" Type="Int32" Nullable="false" />
+    <Property Name="s_adedi" Type="Int32" />
+    <Property Name="s_giris_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="s_bitis_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_turu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stok_log_up">
+    <Key>
+      <PropertyRef Name="stlu_ip" />
+    </Key>
+    <Property Name="stlu_ip" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eski_s_adedi" Type="Int32" />
+    <Property Name="yeni_s_adedi" Type="Int32" />
+    <Property Name="eski_s_giris_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="yeni_s_giris_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="eski_s_bitis_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="yeni_s_bitis_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="urun">
+    <Key>
+      <PropertyRef Name="urun_id" />
+    </Key>
+    <Property Name="urun_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="u_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="u_barkodu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="u_uretim_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="u_tuketim_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="u_fiyat" Type="Double" Nullable="false" />
+    <Property Name="u_agirlik" Type="Double" />
+    <Property Name="u_rengi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="marka_id" Type="Int32" Nullable="false" />
+    <Property Name="kategori_id" Type="Int32" Nullable="false" />
+    <Property Name="stok_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="kategori" Relationship="Self.FK_urun_kategori" FromRole="urun" ToRole="kategori" />
+    <NavigationProperty Name="marka" Relationship="Self.FK_urun_marka" FromRole="urun" ToRole="marka" />
+    <NavigationProperty Name="satis_maddeleri" Relationship="Self.FK_satis_maddeleri_urun" FromRole="urun" ToRole="satis_maddeleri" />
+    <NavigationProperty Name="stok" Relationship="Self.FK_urun_stok" FromRole="urun" ToRole="stok" />
+  </EntityType>
+  <EntityType Name="urun_log_ins_del">
+    <Key>
+      <PropertyRef Name="ulid_id" />
+    </Key>
+    <Property Name="ulid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urun_id" Type="Int32" Nullable="false" />
+    <Property Name="u_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="u_barkodu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="u_uretim_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="u_tuketim_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="u_fiyat" Type="Double" />
+    <Property Name="u_agirlik" Type="Double" />
+    <Property Name="u_rengi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="marka_id" Type="Int32" />
+    <Property Name="kategori_id" Type="Int32" />
+    <Property Name="stok_id" Type="Int32" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_turu" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="urun_log_up">
+    <Key>
+      <PropertyRef Name="ulu_id" />
+    </Key>
+    <Property Name="ulu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eski_u_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_u_adi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="eski_u_barkodu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_u_barkodu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="eski_u_uretim_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="yeni_u_uretim_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="eski_u_tuketim_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="yeni_u_tuketim_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="eski_u_fiyat" Type="Double" />
+    <Property Name="yeni_u_fiyat" Type="Double" />
+    <Property Name="eski_u_agirlik" Type="Double" />
+    <Property Name="yeni_u_agirlik" Type="Double" />
+    <Property Name="eski_u_rengi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yeni_u_rengi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eski_marka_id" Type="Int32" />
+    <Property Name="yeni_marka_id" Type="Int32" />
+    <Property Name="eski_kategori_id" Type="Int32" />
+    <Property Name="yeni_kategori_id" Type="Int32" />
+    <Property Name="eski_stok_id" Type="Int32" />
+    <Property Name="yeni_stok_id" Type="Int32" />
+    <Property Name="islem_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="islem_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_urun_kategori">
+    <End Role="kategori" Type="Self.kategori" Multiplicity="1" />
+    <End Role="urun" Type="Self.urun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kategori">
+        <PropertyRef Name="kategori_id" />
+      </Principal>
+      <Dependent Role="urun">
+        <PropertyRef Name="kategori_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kullanici_rol">
+    <End Role="rol" Type="Self.rol" Multiplicity="1" />
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rol">
+        <PropertyRef Name="rol_id" />
+      </Principal>
+      <Dependent Role="kullanici">
+        <PropertyRef Name="rol_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_satis_kullanici">
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="1" />
+    <End Role="satis" Type="Self.satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kullanici">
+        <PropertyRef Name="kullanici_id" />
+      </Principal>
+      <Dependent Role="satis">
+        <PropertyRef Name="kullanici_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_urun_marka">
+    <End Role="marka" Type="Self.marka" Multiplicity="1" />
+    <End Role="urun" Type="Self.urun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="marka">
+        <PropertyRef Name="marka_id" />
+      </Principal>
+      <Dependent Role="urun">
+        <PropertyRef Name="marka_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_satis_maddeleri_satis">
+    <End Role="satis" Type="Self.satis" Multiplicity="1" />
+    <End Role="satis_maddeleri" Type="Self.satis_maddeleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="satis">
+        <PropertyRef Name="satis_id" />
+      </Principal>
+      <Dependent Role="satis_maddeleri">
+        <PropertyRef Name="satis_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_satis_maddeleri_urun">
+    <End Role="urun" Type="Self.urun" Multiplicity="1" />
+    <End Role="satis_maddeleri" Type="Self.satis_maddeleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="urun">
+        <PropertyRef Name="urun_id" />
+      </Principal>
+      <Dependent Role="satis_maddeleri">
+        <PropertyRef Name="urun_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_urun_stok">
+    <End Role="stok" Type="Self.stok" Multiplicity="1" />
+    <End Role="urun" Type="Self.urun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stok">
+        <PropertyRef Name="stok_id" />
+      </Principal>
+      <Dependent Role="urun">
+        <PropertyRef Name="stok_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BakkalDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="kategori" EntityType="Self.kategori" />
+    <EntitySet Name="kategori_log_ins_del" EntityType="Self.kategori_log_ins_del" />
+    <EntitySet Name="kategori_log_up" EntityType="Self.kategori_log_up" />
+    <EntitySet Name="kullanici" EntityType="Self.kullanici" />
+    <EntitySet Name="kullanici_log_ins_del" EntityType="Self.kullanici_log_ins_del" />
+    <EntitySet Name="kullanici_log_up" EntityType="Self.kullanici_log_up" />
+    <EntitySet Name="marka" EntityType="Self.marka" />
+    <EntitySet Name="marka_log_ins_del" EntityType="Self.marka_log_ins_del" />
+    <EntitySet Name="marka_log_up" EntityType="Self.marka_log_up" />
+    <EntitySet Name="rol" EntityType="Self.rol" />
+    <EntitySet Name="rol_log_ins_del" EntityType="Self.rol_log_ins_del" />
+    <EntitySet Name="rol_log_up" EntityType="Self.rol_log_up" />
+    <EntitySet Name="satis" EntityType="Self.satis" />
+    <EntitySet Name="satis_log_ins_del" EntityType="Self.satis_log_ins_del" />
+    <EntitySet Name="satis_log_up" EntityType="Self.satis_log_up" />
+    <EntitySet Name="satis_maddeleri" EntityType="Self.satis_maddeleri" />
+    <EntitySet Name="smaddeleri_log_ins_del" EntityType="Self.smaddeleri_log_ins_del" />
+    <EntitySet Name="smaddeleri_log_up" EntityType="Self.smaddeleri_log_up" />
+    <EntitySet Name="stok" EntityType="Self.stok" />
+    <EntitySet Name="stok_log_ins_del" EntityType="Self.stok_log_ins_del" />
+    <EntitySet Name="stok_log_up" EntityType="Self.stok_log_up" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="urun" EntityType="Self.urun" />
+    <EntitySet Name="urun_log_ins_del" EntityType="Self.urun_log_ins_del" />
+    <EntitySet Name="urun_log_up" EntityType="Self.urun_log_up" />
+    <AssociationSet Name="FK_urun_kategori" Association="Self.FK_urun_kategori">
+      <End Role="kategori" EntitySet="kategori" />
+      <End Role="urun" EntitySet="urun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kullanici_rol" Association="Self.FK_kullanici_rol">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="kullanici" EntitySet="kullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_satis_kullanici" Association="Self.FK_satis_kullanici">
+      <End Role="kullanici" EntitySet="kullanici" />
+      <End Role="satis" EntitySet="satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_urun_marka" Association="Self.FK_urun_marka">
+      <End Role="marka" EntitySet="marka" />
+      <End Role="urun" EntitySet="urun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_satis_maddeleri_satis" Association="Self.FK_satis_maddeleri_satis">
+      <End Role="satis" EntitySet="satis" />
+      <End Role="satis_maddeleri" EntitySet="satis_maddeleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_satis_maddeleri_urun" Association="Self.FK_satis_maddeleri_urun">
+      <End Role="urun" EntitySet="urun" />
+      <End Role="satis_maddeleri" EntitySet="satis_maddeleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_urun_stok" Association="Self.FK_urun_stok">
+      <End Role="stok" EntitySet="stok" />
+      <End Role="urun" EntitySet="urun" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+</Schema>

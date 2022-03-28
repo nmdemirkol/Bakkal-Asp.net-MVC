@@ -1,0 +1,82 @@
+﻿@model BakkalWebProjesi.ViewModels.HomeModels.HomeClass
+
+@{
+    ViewBag.Title = "Ana Sayfa";
+}
+
+
+<div class="container home">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="home-item">
+
+                <i class="fas fa-box"></i>
+                <div class="text"> Ürün Sayısı</div>
+                <div class="number"> @Model.productCount</div>
+
+                <a href="/Product/Index" class="button">Tümünü Gör</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="home-item">
+
+                <i class="fas fa-users"></i>
+                <div class="text"> Kullanıcı Sayısı</div>
+                <div class="number">@Model.userCount</div>
+
+                <a href="/User/Index" class="button">Tümünü Gör</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="home-item">
+
+                <i class="fas fa-shopping-basket"></i>
+                <div class="text"> Satış Sayısı</div>
+                <div class="number"> @Model.salesCount</div>
+
+                <a href="/Sales/Index" class="button">Tümünü Gör</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="home-item">
+
+                <i class="fas fa-layer-group"></i>
+                <div class="text">Toplam Stok Sayısı</div>
+                <div class="number"> @Model.stockCount</div>
+
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="home-item">
+
+                <i class="fa fa-clipboard-list"></i>
+                <div class="text"> Katogori Sayısı</div>
+                <div class="number"> @Model.catagoryCount</div>
+
+                <a href="/Catagory/Index" class="button">Tümünü Gör</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="home-item">
+
+                <i class="fas fa-boxes"></i>
+                <div class="text"> Marka Sayısı</div>
+                <div class="number"> @Model.brandCount</div>
+
+                <a href="/Brand/Index" class="button">Tümünü Gör</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="home-item">
+
+                <i class="fas fa-user-tag"></i>
+                <div class="text"> Rol Sayısı</div>
+                <div class="number"> @Model.roleCount</div>
+
+                <a href="/Role/Index" class="button">Tümünü Gör</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

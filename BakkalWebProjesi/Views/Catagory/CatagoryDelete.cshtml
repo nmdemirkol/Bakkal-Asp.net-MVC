@@ -1,0 +1,43 @@
+﻿@model BakkalWebProjesi.ViewModels.ProductModels.CatagoryClass
+@{
+    ViewBag.Title = "Kategori Sil";
+}
+
+<div class="roles container">
+    <div class="row ">
+        <div class="col-md-12">
+            <a href="/Role/Index" class="button">Tüm Kategorileri Gör</a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="role-item">
+                <div class="text">@Model.catagory.k_adi</div>
+
+            </div>
+            <div class="role-item">
+                <div class="text">
+                    Bu kategoriyi silmek istediğinize emin misiniz? <hr />
+                    Bu kategoriye sahip <b> @Model.productCount </b> ürün bulunmaktadır.<hr />
+                    @if (@Model.productCount > 0)
+                    { <p>İlk önce bu kategoriye sahip ürünleri silmeniz gerekmektedir.</p>}
+                </div>
+                @if (@Model.productCount <= 0)
+                {
+                    <div class="right">
+                        <form action="/Catagory/CatagoryDelete" method="post" enctype="multipart/form-data">
+                            <input hidden type="text" name="kategori_id" id="id" value="@Model.catagory.kategori_id" />
+ 
+                            <button class="delete">
+                                <i class="fas fa-trash-alt"></i> Sil
+                            </button>
+                        </form>
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>

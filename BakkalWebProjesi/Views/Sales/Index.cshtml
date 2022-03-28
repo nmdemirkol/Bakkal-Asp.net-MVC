@@ -1,0 +1,27 @@
+﻿@model  BakkalWebProjesi.ViewModels.SalesModels.SalesListClass
+
+@{
+    ViewBag.Title = "Satış Yapan Kullanıcılar";
+}
+
+
+<div class="roles container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            @for (int i = 0; i < Model.sales.Count; i++)
+            {
+
+            <div class="role-item row">
+                <div class="text col-md-3">@Model.users.Find(s=>s.kullanici_id== Model.sales[i].kullanici_id).k_adi.ToString() </div>
+                <div class="text col-md-3">@Model.sales[i].s_tarih.Date.Day.@Model.sales[i].s_tarih.Date.Month.@Model.sales[i].s_tarih.Date.Year</div>
+                <div class="text col-md-3">@Model.sales[i].s_durum</div>
+                <div class="text col-md-3"><a href="/Sales/SalesDetail?id=@Model.sales[i].satis_id" class="button" style="margin-bottom:0; width:100%; text-align:center;">Detay</a></div>
+            </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+

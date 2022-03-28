@@ -1,0 +1,47 @@
+﻿@model BakkalWebProjesi.ViewModels.UserModels.UserClass
+@{
+    ViewBag.Title = "Kullanıcı Sil";
+}
+
+
+<div class="container ">
+    <div class="row ">
+        <div class="col-md-12">
+            <a href="/User/Index" class="button">Tüm Kullanıcıları Gör</a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="user-delete">
+                <div class="group2">
+                    <div class="username">@Model.user.k_kullaniciadi</div>
+                    <div class="role">@Model.roles.Find(s => s.rol_id == Model.user.rol_id).r_adi</div>
+                </div>
+                <div class="group">
+                    <div class="firstname">@Model.user.k_adi</div>
+                    <div class="lastname">@Model.user.k_soyadi</div>
+                </div>
+                <div class="text">
+                    Bu kullanıcıyı silmek istediğinize eminmisiniz?
+                </div>
+                <form action="/User/UserDelete" method="post" enctype="multipart/form-data">
+                    <input hidden  type="text" name="kullanici_id" id="kullanici_id" value="@Model.user.kullanici_id" />
+                 <!--   <input hidden  type="text" name="k_kullaniciadi" id="k_kullaniciadi" value="@Model.user.k_kullaniciadi" />
+                    <input hidden type="text" name="k_adi" id="k_adi" value="@Model.user.k_adi" />
+                    <input hidden type="text" name="k_soyadi" id="k_soyadi" value="@Model.user.k_soyadi" />
+                    <input hidden type="text" name="k_eposta" id="k_eposta" value="@Model.user.k_eposta" />
+                    <input hidden type="text" name="k_parola" id="k_parola" value="@Model.user.k_parola" />
+                    <input hidden type="text" name="k_telefon" id="k_telefon" value="@Model.user.k_telefon" />
+                    <input hidden type="text" name="k_durum" id="k_durum" value="@Model.user.k_durum" />
+                    <input hidden type="text" name="rol_id" id="rol_id" value="@Model.user.rol_id" />
+
+-->
+                    <button class="delete">
+                        <i class="fas fa-trash-alt"></i> Sil
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

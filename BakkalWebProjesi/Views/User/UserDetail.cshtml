@@ -1,0 +1,50 @@
+﻿@model BakkalWebProjesi.ViewModels.UserModels.UserClass
+@{
+    ViewBag.Title = "Kullanıcı Detay";
+}
+
+<div class="container ">
+    <div class="row ">
+        <div class="col-md-12">
+            <a href="/User/Index" class="button">Tüm Kullanıcıları Gör</a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="user-detail">
+                <div class="icon">@Model.user.k_adi[0]</div>
+                <div class="main">
+
+                    <div class="group2">
+                        <div class="username">@Model.user.k_kullaniciadi</div>
+                        <div class="role">@Model.roles.Find(s => s.rol_id == @Model.user.rol_id).r_adi</div>
+                    </div>
+                    <div class="group">
+                        <div class="firstname">@Model.user.k_adi</div>
+                        <div class="lastname">@Model.user.k_soyadi</div>
+                    </div>
+
+                    <div class="email">@Model.user.k_eposta</div>
+                    <div class="phone">@Model.user.k_telefon</div>
+                    @if (@Model.user.k_durum)
+                    {
+                        <div class="active"> <i class="fa fa-check" aria-hidden="true"></i> Aktif</div>
+
+                    }
+                    else
+                    {
+                        <div class="pasive"> <i class="fa fa-times" aria-hidden="true"></i> Pasif</div>
+
+                    }
+
+
+                    <a href="/User/UserUpdate?id=@Model.user.kullanici_id" class="edit-btn" title="kullanıcıyı düzenle">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </a>
+                    <a href="/User/UserDelete?id=@Model.user.kullanici_id" class="delete-btn" title="kullanıcıyı sil"><i class="fa fa-trash-alt"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

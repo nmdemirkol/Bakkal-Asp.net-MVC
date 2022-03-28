@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+<div class="content">
+    <div class="login container-fluid">
+        <div class="bg"></div>
+        <img src="~/Content/images/bakkal.jpg" class="bg2" />
+        <form action="/Login/Index" method="post" enctype="multipart/form-data">
+
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="login-in">
+                        <h1>Giriş Yapınız</h1>
+
+                        <input id="username" type="text" name="k_kullaniciadi" placeholder="Kullanıcı Adını Giriniz">
+                        <input id="password" type="password" name="k_parola" placeholder="*****">
+                        <button class="button">Giriş Yap</button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
