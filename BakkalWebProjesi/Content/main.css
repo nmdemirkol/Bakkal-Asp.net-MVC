@@ -1,0 +1,831 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,700&display=swap");
+.navigation-left-bar, .navigation-left-bar .navigation a.item, .content .home .home-item, .content .users .item, .content .products .products-items .item, .custom-select select {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.navigation-left-bar {
+  height: 100vh;
+  background-color: #52b7c9;
+  width: 200px;
+  position: relative;
+  z-index: 10;
+}
+
+.navigation-left-bar .logo {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  line-height: 80px;
+  border-bottom: 1px solid #d5dddf;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.navigation-left-bar .navigation {
+  margin: 0;
+  padding: 0 10px 20px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-y: auto;
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.navigation-left-bar .navigation a.item {
+  width: 100%;
+  background-color: white;
+  color: #536a70;
+  display: table;
+  margin-top: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigation-left-bar .navigation a.item i {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.navigation-left-bar .navigation a.item span {
+  font-size: 14px;
+}
+
+.navigation-left-bar, .navigation-left-bar .navigation a.item, .content .home .home-item, .content .users .item, .content .products .products-items .item, .custom-select select {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #e7f1f1;
+  z-index: 5;
+  overflow: auto;
+  height: 100vh;
+}
+
+.content .top-bar {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .top-bar .header {
+  line-height: 80px;
+  padding: 0 20px;
+  font-size: 24px;
+  color: #536a70;
+  font-weight: bold;
+}
+
+.content .top-bar .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .top-bar .user img {
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 10px;
+}
+
+.content .top-bar .user .icon {
+  float: right;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 15px;
+  display: table;
+  border-radius: 100%;
+  background-color: #536a70;
+  color: white;
+  font-size: 18px;
+  padding-top: 3px;
+  line-height: 37px;
+  text-align: center;
+}
+
+.content .top-bar .user a {
+  color: #536a70;
+  text-decoration: none;
+  border-left: 1px solid #d5dddf;
+  line-height: 60px;
+  font-size: 14px;
+  padding: 0 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.content .top-bar .user a:hover {
+  color: black;
+  background-color: #d5dddf;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.content .home .home-item {
+  background-color: white;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.content .home .home-item i {
+  font-size: 64px;
+  color: #52b7c9;
+}
+
+.content .home .home-item .text {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 15px 0 0 0;
+  color: #536a70;
+  text-align: center;
+}
+
+.content .home .home-item .number {
+  font-size: 48px;
+  color: #52b7c9;
+  padding: 0;
+  margin: 0;
+}
+
+.content .home .home-item .button {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.content .users .item {
+  background-color: white;
+  position: relative;
+  border-radius: 10px;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.content .users .item a {
+  color: #536a70;
+  text-decoration: none;
+}
+
+.content .users .item a img {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  display: table;
+  border-radius: 10px;
+}
+
+.content .users .item a .icon {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  display: table;
+  border-radius: 100%;
+  background-color: #536a70;
+  color: white;
+  font-size: 50px;
+  padding-top: 10px;
+  line-height: 90px;
+  text-align: center;
+}
+
+.content .users .item a h1 {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.content .users .item a span {
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  display: table;
+  color: #52b7c9;
+  padding-top: 0;
+}
+
+.content .users .item a.edit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #536a70;
+  padding: 13px 20px;
+  font-size: 22px;
+}
+
+.content .users .item a.delete-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #536a70;
+  padding: 20px 22px;
+  font-size: 16px;
+  color: #e41607;
+}
+
+.content .user-add .text {
+  text-align: right;
+  line-height: 60px;
+}
+
+.content .user-add .send {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .products .products-items .item {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.content .products .products-items .item img {
+  width: 80%;
+  height: 150px;
+  margin: auto;
+  display: table;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.content .products .products-items .item h1 {
+  font-size: 16px;
+}
+
+.content .products .products-items .item .brand {
+  font-size: 12px;
+}
+
+.content .products .products-items .item .catagory {
+  font-size: 12px;
+}
+
+.content .products .products-items .item .stock {
+  font-size: 12px;
+}
+
+.content .products .products-items .item .price {
+  font-size: 18px;
+  text-align: right;
+}
+
+.content .products .products-items .item .product-button {
+  background-color: #536a70;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px 25px 7px 25px;
+  display: table;
+  margin-top: 10px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.content .products .products-items .item .product-button i {
+  padding-right: 10px;
+}
+
+.content .products .products-items .item .product-button:hover {
+  background-color: #d5dddf;
+  color: #536a70;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.content .products .product-list h1 {
+  margin: 10px 5px;
+  padding: 0;
+  font-size: 24px;
+  color: #536a70;
+}
+
+.content .products .product-list .product-items .product-item {
+  color: #536a70;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content .products .product-list .product-items .product-item i {
+  padding-right: 10px;
+}
+
+.content .products .product-list .product-items .product-item .delete-btn {
+  color: #e41607;
+  padding-left: 10px;
+}
+
+.content .products .product-list .product-items .product-button {
+  background-color: #536a70;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px 25px 7px 25px;
+  display: table;
+  margin-bottom: 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border: none;
+  width: 100%;
+}
+
+.content .products .product-list .product-items .product-button i {
+  padding-right: 10px;
+}
+
+.content .products .product-list .product-items .product-button:hover {
+  background-color: #d5dddf;
+  color: #536a70;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.content .products .product-list .product-items .product-value {
+  color: #536a70;
+  padding: 20px 10px;
+  text-align: right;
+}
+
+.content .login {
+  position: relative;
+}
+
+.content .login .bg {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #536a70;
+}
+
+.content .login .bg2 {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
+}
+
+.content .login .login-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content .login .login-in h1 {
+  text-align: center;
+  color: white;
+  font-size: 42px;
+}
+
+.content .login .login-in input {
+  margin: 10px 0;
+  width: auto;
+}
+
+.content .login .login-in button {
+  margin: 10px 0;
+}
+
+.content .roles .role-item {
+  background-color: white;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.content .roles .role-item .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .roles .role-item .right a {
+  padding: 0 20px;
+}
+
+.content .roles .role-item .right a .update {
+  color: #3be407;
+}
+
+.content .roles .role-item .right a .delete {
+  color: #e41607;
+}
+
+.content .roles .role-item .right button.delete {
+  padding: 10px 20px;
+  background-color: #e41607;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.content .user-detail {
+  background-color: white;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 20px 100px 20px 20px;
+  margin-bottom: 10px;
+  color: #536a70;
+  position: relative;
+}
+
+.content .user-detail .main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content .user-detail .main .username {
+  color: #52b7c9;
+}
+
+.content .user-detail .main .group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .user-detail .main .group2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .user-detail .main .firstname {
+  padding-right: 10px;
+}
+
+.content .user-detail .main .active {
+  color: #3be407;
+}
+
+.content .user-detail .main .pasive {
+  color: #e41607;
+}
+
+.content .user-detail .main .role {
+  color: #83a2aa;
+}
+
+.content .user-detail .icon {
+  width: 100px;
+  height: 100px;
+  display: table;
+  border-radius: 100%;
+  background-color: #536a70;
+  color: white;
+  font-size: 50px;
+  padding-top: 10px;
+  line-height: 90px;
+  text-align: center;
+}
+
+.content .user-detail a.edit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #536a70;
+  padding: 13px 20px;
+  font-size: 22px;
+}
+
+.content .user-detail a.delete-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #536a70;
+  padding: 20px 22px;
+  font-size: 16px;
+  color: #e41607;
+}
+
+.content .user-delete {
+  background-color: white;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 10px;
+  color: #536a70;
+  position: relative;
+}
+
+.content .user-delete .username {
+  color: #52b7c9;
+}
+
+.content .user-delete .group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .user-delete .group2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .user-delete .firstname {
+  padding-right: 10px;
+}
+
+.content .user-delete .text {
+  padding: 20px 0 10px 0;
+  color: #e41607;
+}
+
+.content .user-delete .role {
+  color: #83a2aa;
+}
+
+.content .user-delete a.edit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #536a70;
+  padding: 13px 20px;
+  font-size: 22px;
+}
+
+.content .user-delete a.delete-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #536a70;
+  padding: 20px 22px;
+  font-size: 16px;
+  color: #e41607;
+}
+
+.content .user-delete button.delete {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #e41607;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body .page {
+  font-family: "Josefin Sans", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.button {
+  background-color: #536a70;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px 25px 7px 25px;
+  display: table;
+  margin-bottom: 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border: none;
+}
+
+.button i {
+  padding-right: 10px;
+}
+
+.button:hover {
+  background-color: #d5dddf;
+  color: #536a70;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+input {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  color: #536a70;
+}
+
+input:hover {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.custom-select {
+  padding: 7px 0;
+}
+
+.custom-select select {
+  position: relative;
+  font-family: Arial;
+  background-color: white;
+  padding: 13px 20px;
+  border-radius: 10px;
+  border: none;
+}
+/*# sourceMappingURL=main.css.map */
